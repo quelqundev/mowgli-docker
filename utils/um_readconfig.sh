@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DEVICE="/dev/gps"
+BAUD=460800
 
 # Fonction pour envoyer une commande proprement
 send_cmd() {
@@ -8,8 +9,9 @@ send_cmd() {
     sleep 0.2
 }
 
-echo "[*] RESET de l'UM980 via $DEVICE"
+echo "[*] Lecture de la Configuration de l'UM980 via $DEVICE"
 
-# Réinitialisation (RESET ALL)
-echo "[1] Envoi de RESET ALL..."
-send_cmd 'RESET ALL'
+# Réinitialisation (FRESET)
+echo "[1] Envoi de \$CONFIG..."
+send_cmd '$CONFIG'
+

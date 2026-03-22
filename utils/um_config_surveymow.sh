@@ -8,8 +8,9 @@ send_cmd() {
     sleep 0.2
 }
 
-echo "[*] RESET de l'UM980 via $DEVICE"
+send_cmd 'MODE ROVER SURVEY MOW'
+sleep 1
 
-# Réinitialisation (RESET ALL)
-echo "[1] Envoi de RESET ALL..."
-send_cmd 'RESET ALL'
+# Sauvegarde de la config
+echo "[6] Envoi de SAVECONFIG..."
+send_cmd 'SAVECONFIG'

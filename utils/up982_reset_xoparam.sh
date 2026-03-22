@@ -10,6 +10,7 @@ send_cmd() {
 
 echo "[*] RESET de l'UM980 via $DEVICE"
 
-# Réinitialisation (RESET ALL)
-echo "[1] Envoi de RESET ALL..."
-send_cmd 'RESET ALL'
+# Réinitialisation (FRESET)
+echo "[1] Envoi de RESET..."
+send_cmd 'RESET XOPARAM'
+send_cmd 'RESET CLOCKDRIFT'
